@@ -46,7 +46,7 @@ describe('Incremendator Component', () => {
     });
 
 
-    it('Debe de mostrar en el input el valor del progreso', () => {
+    it('Debe de mostrar en el input el valor del progreso', async () => {
         
         component.cambiarValor(5);
 
@@ -57,7 +57,7 @@ describe('Incremendator Component', () => {
          * se puede utilizar el whenStable que se espera para que 
          * acabe el ciclo de cambios detectChanges()
          */
-        fixture.whenStable().then( () => {
+        await fixture.whenStable().then( () => {
             
             const input = fixture.debugElement.query( By.css('input') );
             const elem: HTMLInputElement = input.nativeElement;
